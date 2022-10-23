@@ -1,3 +1,5 @@
+def call(Map config=[:])
+{
 node {
   stage('SCM') 
     {
@@ -31,4 +33,5 @@ node {
     {
         echo 'Deploying...'
     }
+}
 }
