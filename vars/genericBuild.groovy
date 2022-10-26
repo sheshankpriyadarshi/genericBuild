@@ -8,6 +8,14 @@ node {
     }
     stage('Build') 
     {
+      input {
+        message 'Build ?'
+        ok 'do it..'
+        parameters
+        {
+          string(name: 'TARGET_ENVIRONMENT', defaultValue: 'PROD', description: 'Build env....')
+        }
+      }
       try{
         bat 'dotnet --version' 
         bat 'dotnet build ' + config.target
